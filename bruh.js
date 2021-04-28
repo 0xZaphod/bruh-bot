@@ -1,5 +1,6 @@
+require('dotenv').config();
+
 const Discord = require('discord.js');
-const authToken = require('./auth.json').token;
 
 const client = new Discord.Client();
 
@@ -7,7 +8,7 @@ client.on('ready', () => {
 	console.log('ready');
 });
 
-client.login(authToken);
+client.login(process.env.token);
 
 client.on('voiceStateUpdate', (oldState, newState) => {
 	let channel = newState.channel;
