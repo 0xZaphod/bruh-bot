@@ -11,16 +11,19 @@ client.on('ready', () => {
 client.login(process.env.token);
 
 client.on('voiceStateUpdate', (oldState, newState) => {
-	let channel = newState.channel;
+	let oldChannel = oldState.channel;
+	let newChannel = newState.channel;
 
-  	if(channel && channel.name.toLowerCase().includes('bruh')) {
-		channel.join().then(connection =>{
+  	if(newChannel 
+	   && oldChannel != newChannel 
+	   && newChannel.name.toLowerCase().includes('bruh')) {
+		newChannel.join().then(connection =>{
 			const dispatcher = connection.play(require("path").join(__dirname,'./bruh.mp3'));
 
 			dispatcher.on('finish', () => {
 				console.log('end');
 				dispatcher.destroy();
-				channel.leave();
+				newChannel.leave();
 			});
 		});
   	} 
