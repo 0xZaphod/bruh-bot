@@ -1,16 +1,26 @@
 {
   "name": "bruh-bot",
   "version": "1.0.0",
-  "description": "Bruh",
+  "description": "Says bruh when someones joins a channel that contains the word \"bruh\"",
   "main": "bruh.js",
-  "author": "Zaphod",
-  "dependencies": {
-    "@discordjs/opus": "^0.5.0",
-    "discord.js": "^12.5.3",
-    "dotenv": "^8.2.0",
-    "ffmpeg-static": "^4.3.0"
-  },
   "scripts": {
-    "run": "node ./bruh.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xZaphod/bruh-bot.git"
+  },
+  "author": "Zaphod",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0xZaphod/bruh-bot/issues"
+  },
+  "homepage": "https://github.com/0xZaphod/bruh-bot#readme",
+  "dependencies": {
+    "@discordjs/voice": "^0.15.0",
+    "discord.js": "^14.8.0",
+    "dotenv": "^16.0.3",
+    "ffmpeg-static": "^5.1.0",
+    "tweetnacl": "^1.0.3"
   }
 }
