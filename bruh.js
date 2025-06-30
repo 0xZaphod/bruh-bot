@@ -45,4 +45,4 @@ client.on('voiceStateUpdate', async (oldState, newState) => {
             }
         })
     }
-}); 
+});
